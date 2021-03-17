@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ethical Technology Adoption in Public Administration Services">
+
+    <title>ETAPAS Project</title>
+
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/css/all.min.css" type="text/css" rel="stylesheet">
+    <link href="/css/slick.css" type="text/css" rel="stylesheet">
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/css/bic_calendar.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Lato:wght@400;900&display=swap" rel="stylesheet">
+
+    <style>
+        .slickCarousel .slick-slide  {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    <div id="testata" class="fixed-top">
+        <div class="container px-sm-3 px-2 position-relative">
+
+            <div class="linkContact">
+                <div onclick="window.location.href='mailto:etapas@etapasproject.eu'" class="cursorPointer media float-left mr-4">
+                    <i class="txtBianco fas fa-envelope mr-2"></i>
+                    <div><p class="my-0 txtCeleste fontPiccolo">Send us email</p><p class="txtBianco my-0 fontPiccolissimo">etapas@etapasproject.eu</p></div>
+                </div>
+                <div onclick="window.open('https://twitter.com/ETAPAS_EU','_blank')" class="cursorPointer media float-left mr-4">
+                    <i class="txtBianco fab fa-twitter mr-2"></i>
+                    <div><p class="my-0 txtCeleste fontPiccolo">Follow us</p><p class="txtBianco my-0 fontPiccolissimo">@ETAPAS_Project</p></div>
+                </div>
+                <div onclick="window.open('https://www.linkedin.com/company/etapas-project/','_blank')" class="cursorPointer media">
+                    <i class="txtBianco fab fa-linkedin-in mr-2"></i>
+                    <div><p class="my-0 txtCeleste fontPiccolo">Follow us</p><p class="txtBianco my-0 fontPiccolissimo">ETAPAS Project</p></div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-md px-0 py-2">
+                <a class="logo" href="/#topPagina"><img src="/images/logo.svg" alt="ETAPAS Home"></a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa txtBianco"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto text-center">
+                            <!-- <li class="nav-item">
+                                <a class="active nav-link px-0 py-2" href="/#topPagina">Home</a> 
+                            </li> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item py-2" href="/about/overview">Overview</a>                                    
+                                    <a class="dropdown-item py-2" href="#objectives">Objectives</a>
+                                    <a class="dropdown-item py-2" href="/about/approach">Approach</a>
+                                    <a class="dropdown-item py-2" href="/about/impacts">Expected impacts</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link pl-md-4 px-0 py-2" href="/whoweare/">Who we are</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Use cases</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item py-2" href="/usecases/post-1">MEF Use case</a>
+                                    <a class="dropdown-item py-2" href="/usecases/post-2">IIT-FDG Use case</a>
+                                    <a class="dropdown-item py-2" href="/usecases/post-3">SINTEF-Prokom Use case</a>
+                                    <a class="dropdown-item py-2" href="/usecases/post-4">CERTH-MUKA Use case</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item py-2" href="/resources/media">Media</a>
+                                    <a class="dropdown-item py-2" href="/resources/publications">Publications</a>
+                                    <a class="dropdown-item py-2" href="/resources/deliverables">Public Deliverables</a>
+                                    <a class="dropdown-item py-2" href="/resources/other">Other Resources</a><!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-md-4 px-0 py-2" href="#contattaci">Contact us</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link pl-md-4 px-0 py-2" href="#searcModal"><i class="fas fa-search"></i></a>
+                            </li>-->
+                        </ul>
+                    </div>
+            </nav>
+
+        </div>
+
+    </div>
+<div id="topPagina"></div>
+    <div id="homeSlider" class="bkBluScuro">
+        <header>
+            <div class="vetro vetroScuro"></div>
+
+            <div id="headCarousel" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#headCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#headCarousel" data-slide-to="1"></li>
+                    <li data-target="#headCarousel" data-slide-to="2"></li>
+                </ol>
+                
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img class="media position-absolute" src="/images/etapaslook.jpg">
+                        <div class="container">
+                            <div class="row align-items-center" style="margin-top: 150px; height: 40rem;">
+                                <div class="col">
+                                    <div class="LeftBlock txtBianco">
+                                        <div class="display-1">ETAPAS kick-off press release</div>
+                                        <p class="display-3 lead my-sm-4 my-3 txtBianco">On November 25th we held the Kick-off Meeting of ETAPAS "Ethical Technology Adoption in Public Administration Services" ...</p>                        
+                                    </div>
+                                    <button type="button" onclick="window.location.href='/news/'" class="btn hoverEffect big borderCeleste bkCeleste txtBianco mt-sm-3 mt-3">Read more </button>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="media position-absolute" src="/images/server.jpg">
+                        <div class="container">
+                            <div class="row align-items-center" style="margin-top: 150px; height: 40rem;">
+                                <div class="col">
+                                    <div class="LeftBlock txtBianco">
+                                        <div class="display-1">Who we are</div>
+                                        <p class="display-3 lead my-sm-4 my-3 txtBianco">The ETAPAS Consortium is formed by 14 Partners from 8 different Countries including PAs, DIHs, IT firms, Research Organisations and universities.</p>                        
+                                    </div>
+                                    <button type="button" onclick="window.location.href='/whoweare'" class="btn hoverEffect big borderCeleste bkCeleste txtBianco mt-sm-3 mt-3">Read more </button>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="media position-absolute" src="/images/node.jpg">
+                        <div class="container">
+                            <div class="row align-items-center" style="margin-top: 150px; height: 40rem;">
+                                <div class="col">
+                                    <div class="LeftBlock txtBianco">
+                                        <div class="display-1">Our expected impacts</div>
+                                        <p class="display-3 lead my-sm-4 my-3 txtBianco">Key outcomes and impacts of the ETAPAS project</p>                        
+                                    </div>
+                                    <button type="button" onclick="window.location.href='/about/impacts/'" class="btn hoverEffect big borderCeleste bkCeleste txtBianco mt-sm-3 mt-3">Read more </button>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+
+                </div>
+                
+                <a class="carousel-control-prev" href="#headCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#headCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+
+          </header>
+    </div>
+
+    <div id="overview" class="containerExt text-center">
+        <div class="container">
+            <div style="z-index: 999999">
+            <div class="display-2 txtCeleste">Overview</div>
+            <div class="txtBluScuro display-1">What’s the ethical, social and legal impact of the use of Artificial Intelligence, Robotics or Big data in the Public Sector, and how to deal with it?</div>
+            <div class="text-lg-right text-sm-right mt-4"><a style="z-index: 9999" class="hoverEffect" href="/about/overview/">Read More&nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right" style="    font-size: 15px !important;"></i></a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containerExt parallax parallax1">
+        <div class="vetro vetroChiaro"></div>
+        <div class="foto"></div>
+        <div class="container">
+            <div style="padding-top: 150px; margin-top: -150px;" id="objectives" class="text-center mb-5"><span class="display-2 txtBluScuro">Objectives</span></div>            
+            <div class="row">
+                <div class="d-flex align-items-stretch col-lg-4 mt-2 mb-lg-2 mb-5 pr-4">
+                    <div onmouseover="this.classList.add('on');" onmouseout="this.classList.remove('on');" class="hoverCeleste bkBianco bkBiancoVetro py-4 px-5 radius-2"><div class="text-center"><span class="seqNum">1</span></div><p>Define a conceptual Responsible Disruptive Technologies framework to assess and manage the ethical risks of DT-based applications in the public sector and their potential social and legal impacts.</p></div>
+                </div>
+                <div class="d-flex align-items-stretch col-lg-4 mt-2 mb-lg-2 mb-5 px-4">
+                    <div onmouseover="this.classList.add('on');" onmouseout="this.classList.remove('on');" class="hoverCeleste bkBianco bkBiancoVetro py-4 px-5 radius-2"><div class="text-center"><span class="seqNum">2</span></div>Design and develop a software prototype that enables ethical assessment of DTs in the public sector on the basis of the conceptual framework.</div>
+                </div>
+                <div class="d-flex align-items-stretch col-lg-4 mt-2 mb-lg-2 mb-5 pl-4">
+                    <div onmouseover="this.classList.add('on');" onmouseout="this.classList.remove('on');" class="hoverCeleste bkBianco bkBiancoVetro py-4 px-5 radius-2"><div class="text-center"><span class="seqNum">3</span></div>Validate the relevance and applicability of the whole framework, the indicators and relevant metrics to public administration processes via application to four real-life Use Cases.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="partners" class="containerExt text-center">
+        <span class="display-2 txtCeleste">Partners</span>
+        <!-- <div class="d-flex align-items-center" style="height: 150px"> -->
+            
+        <div class="container"> 
+            
+            <!--START Slick Carousel-->
+            <div class="slickCarousel">
+                <div><a href="https://www.mef.gov.it/" target="_blank"><img src="/images/loghi/mef.png" style="height: 50px"></a></div>
+                <div><a href="https://www.pwc.com/it/it.html" target="_blank"><img src="/images/loghi/pwc.png" style="height: 60px"></a></div>
+                <div><a href="https://2021.ai/" target="_blank"><img src="/images/loghi/2021.png" style="height: 50px"></a></div>
+                <div><a href="https://www.sintef.no/hci/" target="_blank"><img src="/images/loghi/sintef.png" style="height: 70px"></a></div>
+                <div><a href="https://prokom.no/" target="_blank"><img src="/images/loghi/prokom.png" style="height: 26px"></a></div>
+                <div><a href="https://www.iti.gr/iti/index.html" target="_blank"><img src="/images/loghi/iti.png" style="height: 50px"></a></div>
+                <div><a href="https://www.pwc.com/it/it.html" target="_blank"><img src="/images/loghi/itt.png" style="height: 40px"></a></div>
+                <div><a href="https://lisboncouncil.net/" target="_blank"><img src="/images/loghi/lisbon.png" style="height: 34px"></a></div>
+                <div><a href="https://www.kth.se/en" target="_blank"><img src="/images/loghi/kth.png" style="height: 60px"></a></div>
+                <div><a href="https://www.cea.fr/" target="_blank"><img src="/images/loghi/cea.png" style="height: 60px"></a></div>
+                <div><a href="https://www.dongnocchi.it/" target="_blank"><img src="/images/loghi/don.png" style="height: 45px"></a></div>
+                <div><a href="https://katerini.gr/" target="_blank"><img src="/images/loghi/muka.png" style="height: 74px"></a></div>
+                <div><a href="https://www.uni-graz.at/en/" target="_blank"><img src="/images/loghi/graz.png" style="height: 74px"></a></div>
+                <div><a href="https://ki.se/en" target="_blank"><img src="/images/loghi/karolinska.png" style="height: 74px"></a></div>
+            </div>
+
+            <!--END Slick Carousel-->
+
+        </div>
+    </div>
+
+    <div id="events" class="containerExt bkGrigioChiaro rescaleSmooth">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="mb-4 pr-lg-5 pr-sm-0">
+                        <div class="display-2 txtBluScuro" style="margin-bottom: 0;">Calendar</div>
+                        
+                        <div id="bicCalendar" class="mb-5 loading"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        
+                        <div class="display-2 txtBluScuro">Future events</div>
+
+                        <div id="FutureEvents" class="loading"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="events" class="containerExt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 pb-sm-5 pb-5">
+                    <div class="mb-md-5 mb-4"><span class="display-2 txtCeleste">Latest News</span>
+                    </div>
+                    <div id="latestnews" class="loading"></div>                  
+
+                </div>
+                <div class="col-md-6 pb-4">
+                    <div class="mb-md-5 mb-4"><span class="display-2 txtCeleste">Recent tweets</span>
+                    </div>
+                    <div class="bkCelesteChiaro radius-2 p-3">
+                    
+                        <!-- START Embedded Twitter -->
+                        <a style="width: 100%" class="twitter-timeline" href="https://twitter.com/ETAPAS_EU" data-chrome="noborders transparent" data-tweet-limit="2">Tweets by ETAPAS Project</a>
+                        <!-- END Embedded Twitter -->
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="highlights" class="containerExt parallax parallax2">
+        <div class="vetro vetroChiaro"></div>
+        <div class="foto"></div>
+        <div class="container">
+            <div class="text-center mb-3"><span class="display-2 txtBluScuro">Highlights</span></div>            
+            <div class="row">
+                <div class="row">
+
+                    <div class="col-lg-6 py-3 px-xl-5 px-lg-4 px-md-5">
+                        <div onclick="window.location.href='/usecases/post-1/'" class="media bkBianco hoverEffect cursor-pointer">
+                            <div class="fotoCard"><img src="images/hilight-1.jpg"></div>
+                            <div class="fontPiccolo px-4">
+                                <h2 class="mt-3 txtBluScuro">MEF Use case</h2>
+                                <p>Ethically Responsible Big Open Data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 py-3 px-xl-5 px-lg-4 px-md-5">
+                        <div onclick="window.location.href='/usecases/post-2/'" class="media bkBianco hoverEffect cursor-pointer">
+                            <div class="fotoCard"><img src="images/hilight-2.jpg"></div>
+                            <div class="fontPiccolo px-4">
+                                <h2 class="mt-3 txtBluScuro">IIT-FDG Use case</h2>
+                                <p>Robot-mediated rehabilitation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 py-3 px-xl-5 px-lg-4 px-md-5">
+                        <div onclick="window.location.href='/usecases/post-3/'" class="media bkBianco hoverEffect cursor-pointer">
+                            <div class="fotoCard"><img src="images/hilight-3.jpg"></div>
+                            <div class="fontPiccolo px-4">
+                                <h2 class="mt-3 txtBluScuro">SINTEF-Prokom use case</h2>
+                                <p> Municipality chatbot - Kari</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 py-3 px-xl-5 px-lg-4 px-md-5">
+                        <div onclick="window.location.href='/usecases/post-4/'" class="media bkBianco hoverEffect cursor-pointer">
+                            <div class="fotoCard"><img src="images/hilight-4.jpg"></div>
+                            <div class="fontPiccolo px-4">
+                                <h2 class="mt-3 txtBluScuro">CERTH-MUKA use case</h2>
+                                <p>Public Organizations Multi-factor Misinformation Handling</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="mediagallery" class="containerExt texture texture1">
+        <div class="foto"></div>
+        <div class="container">
+            <div class="text-center mb-2"><span class="display-2 txtBianco">Media gallery</span></div>            
+            <div class="row aling-center">
+
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Adendum fecit esta pirsit meritat et adium');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-1.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Adendum fecit esta pirsit meritat et adium</div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1mw6IJpCX-pgEjfbnjotbd5JNaSn6lunw#grid','Test galleria con video');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-2.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Test galleria con video</div>
+                </div>
+ 
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Adendum fecit esta pirsit meritat et adium matrix mit et candriam moret cutrium');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-3.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Adendum fecit esta pirsit meritat et adium matrix mit et candriam moret cutrium</div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Adendum fecit esta pirsit meritat et adium');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-4.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Adendum fecit esta pirsit meritat et adium</div>
+                </div>                
+                
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Larium etric mutuatum marit');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-5.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Larium etric mutuatum marit</div>
+                </div>
+                
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Adendum fecit esta pirsit meritat et adium');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-6.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Adendum fecit esta pirsit meritat et adium</div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Codrem estiar et miet miret adendum otrx miriat fecit');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-7.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Codrem estiar et miet miret adendum otrx miriat fecit</div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3 col-md-4 px-xl-5 px-lg-4 px-md-4 mt-4">
+                    <div onclick="modalGallery('https://drive.google.com/embeddedfolderview?id=1A0s8S9Ewmt0hUlgbFC72LkmtdqS3Kpik#grid','Larium etric mutuatum');" class="gallerycard cursor-pointer hoverEffect addClassHover"><img src="images/gallery-8.jpg"></div>
+                    <div class="fontPiccolo txtBianco my-2">Larium etric mutuatum</div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="contattaci" class="containerExt">
+        <div class="text-center container">
+            <div class="mb-4"><span class="display-2 txtBluScuro">Contact us</span></div>
+
+                    <!-- START Contact Form -->
+                    <div class="row justify-content-md-center px-3">                        
+                        <form  method="post"  action="https://www.etapasproject.eu/backend/Formail_Php/formInvio.php">
+                            <div class="form-group">
+                                <input id="nomerichiedente" name="Name" type="text" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input name="E-mail" type="email" placeholder="Email" class="form-control" aria-describedby="emailHelp" required>
+                                <div class="invalid-tooltip">The email is invalid</div>
+                                </div>
+                                <div class="col">
+                                    <input name="Website" type="text" class="form-control" placeholder="Website" required>
+                                </div>
+                            </div>
+                            <div class="form-group my-3">
+                                <textarea name="Message" class="form-control" placeholder="Your Message" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="messageCheckprivacy" required>
+                                <label class="form-check-label fontPiccolo" for="messageCheck">
+                                    I have read and accept the conditions indicated in the <a href="/privacy.html">Privacy Policy</a> and in the <a href="/terms.html">Terms and Conditions</a></label>
+                            </div>
+                            <input value="Send message" type="submit" class="btn big borderCeleste positivo hoverEffect" title="Send message">
+                        </form>
+                    </div>
+                    <!-- END Contact Form -->
+        </div>
+    </div>  
+
+    <!-- Footer -->
+    <footer class="bkGrigioChiaro text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 pt-4">
+                            <div class="media">
+                                <img src="/images/euflag.png" style="height: 53px">
+                                <div class="fontPiccolissimo txtGrigioScurissimo text-left px-4">This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004594. This website reflects the views only of the Consortium, and the Commission cannot be held responsible for any use which may be made of the information contained herein.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 pt-4 fontPiccolissimo text-left">Disclaimer</div>
+                        <div class="col-lg-2 pt-4 text-right">
+                            <a target="_blank" href="https://twitter.com/ETAPAS_EU"><i class="txtGrigio fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a target="_blank" href="https://www.linkedin.com/company/etapas-project/"><i class="txtGrigio fab fa-linkedin-in"></i></a></div>
+                    </div>
+                    <hr>
+                    <p class="fontPiccolo txtGrigioScurissimo pb-3">2021 © ETAPAS Project. All Rights Reserved
+                    </p> 
+                </div>
+
+    </footer>
+
+    <a href="#topPagina" id="paginaTopIco" class="fadeIn"><i class="fas fa-chevron-circle-up"></i></a>
+
+        <!-- START Bootstrap-Cookie-Alert -->
+        <div class="alert text-center cookiealert bkBianco p-2 py-4 shadow" role="alert">
+            <p class="fontNormale"><b>this website uses cookies to give you the best online experience. By clicking "continue",  you hereby consent to our use of cookies</b></p>
+            <button type="button" class="m-3 btn big btn-sm borderBlu positivo hoverEffect acceptcookies">Continue</button>
+            <button type="button" class="m-3 btn big btn-sm borderBlu positivo hoverEffect" onclick="window.open('/privacy.html')">Read more</button>
+        </div>
+        <!-- END Bootstrap-Cookie-Alert -->
+
+    <!-- Modal Piccolo -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title txtBlu" id="privacyModalLabel">Error!</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <p>You must first confirm that you have read the privacy policy.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Piccolo -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title txtBlu" id="successModalLabel">Thanks for contacting us</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <p>As soon as possible we will reply you.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Grande -->
+    <div class="modal fade" id="modalGallery" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title display-2 txtBlu my-0 mx-4" id="successModalLabel"></h1>
+            <button type="button" class="close txtBluScuro" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <iframe width="100%" height="100%" frameborder="0">
+                </iframe>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modulo Iscrizione Newsletter -->
+    <div class="tnp tnp-subscription bkCeleste radius-1 closePop">
+        <form method="post" action="https://www.etapasproject.eu/backend/?na=s">
+            <div class="form-group mr-3">
+                <span  onclick="closePop(this)" class="float-right bkBianco bottoncino"><i class="fas fa-times txtBluScuro cursorPointer hoverEffect"></i></span>               
+            </div>
+            <div class="form-group px-4 pt-4 pb-3 fontGrande text-center txtBianco display-5">
+                please subscribe here<br>to receive the ETAPAS newsletters
+            </div>
+            <input type="hidden" name="nlang" value="">
+            <div class="form-group px-4 tnp-field tnp-field-email">
+                <input type="email" class="bkBianco form-control" name="ne" placeholder="Enter your Email" required>
+            </div>
+            <div class="form-group px-4 tnp-field tnp-field-email">
+                <input type="text" class="bkBianco form-control" name="nn" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-group form-check px-4 pb-2">
+                <input type="checkbox" class="form-check-input ml-1" id="exampleCheck1" required>
+                <label class="fontPiccolo form-check-label ml-4" for="exampleCheck1">By continuing, you accept the <a class="txtBluScuro hoverEffect" href="/privacy.html">Privacy Policy</a></label>
+                <input class="hoverEffect bkBluScuro txtBianco tnp-submit mt-3 mb-4" type="submit" value="SignUp" >
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bic_calendar.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="/js/slick.min.js"></script>    
+    <script src="/js/urlApi.js"></script>
+    <script src="/js/custom.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            if(window.location.href.indexOf('#successModal') != -1) {
+                    $("#successModal").modal("show");
+            }
+            $('.slickCarousel').slick({
+                speed: 600,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                autoplay: true,
+                arrows: true,
+                responsive: [
+                {
+                breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                ]
+            });
+
+            // get json eventi
+            jQuery.ajax({
+                url: urlApi+"acf/v3/posts?categories=3",
+                method: "GET"
+            }).then(function (response) {
+
+            var today = new Date();
+            var employees = [];
+            
+            $.each(response, function (index, value) {
+                var dd = value.acf.event_start.slice(0,2);
+                var mm = value.acf.event_start.slice(3,5);
+                var yy = value.acf.event_start.slice(6,12);
+                var dateEvent = new Date(yy+'-'+mm+'-'+dd);
+                if(value.acf.event_end != ""){var event_end = parseInt(value.acf.event_end.slice(0,2))+'/'+parseInt(value.acf.event_end.slice(3,5))}else{var event_end = ""}
+                if(today < dateEvent) {
+                    $('#FutureEvents').append('<div onclick="window.open(\''+value.acf.event_link+'\',\'_blank\')" class="mb-4 media bkCelesteChiaro hoverEffect cursor-pointer"><div class="dataCard '+value.acf.type+' text-center fontGrande txtBianco d-flex justify-content-center align-items-center px-3">'+parseInt(dd)+'/'+parseInt(mm)+'<br>'+event_end+'</div><div class="fontNormale px-4"><h3 class="mt-3 txtBluScuro">'+value.acf.description+'</h3></div></div>');
+                }
+                employees.push({
+                    "date": parseInt(dd)+"/"+parseInt(mm)+"/"+parseInt(yy),
+                    "title": value.acf.description,
+                    "class": value.acf.type,
+                    "link": value.acf.event_link,
+                    "linkTarget": "_blank"
+                });                
+            })
+                console.log('end calendar');
+                calendario(employees);
+            }).catch(error => {
+                console.log(error);
+            })
+            // / get json eventi
+
+            // calendario
+            function calendario(employees) {
+                var events = employees;
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December "];
+                var dayNames = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+                $('#bicCalendar').bic_calendar({
+                    events: events,
+                    enableSelect: true,
+                    multiSelect: true,
+                    dayNames: dayNames,
+                    monthNames: monthNames,
+                    showDays: true
+                });
+                $('#FutureEvents.loading, #bicCalendar.loading').addClass('on').prev('.loadingIndicator').hide();
+            }
+            // / calendario
+        });
+
+        // get json news
+        jQuery.ajax({
+                url: urlApi+"wp/v2/posts?categories=5&_fields=slug,date,title,excerpt",
+                method: "GET"
+            }).then(function (response) {
+
+            $.each(response, function (index, value) {                
+                //if(today < dateEvent) {
+                    $('#latestnews').append('<div slug="'+value.slug+'" title="'+value.title.rendered+'" class="cardNews mb-4 media mr-xl-5 mr-md-0 borderGrigioChiaro bkBianco hoverEffect cursor-pointer"><div class="dataCard bkCeleste fontNormale txtBianco d-flex justify-content-center align-items-center text-center px-3">'+value.date.slice(8,10)+'/'+value.date.slice(5,7)+'/'+value.date.slice(0,4)+'</div><div class="fontPiccolo px-4 pb-2"><h2 class="mt-3 txtBluScuro">'+value.title.rendered+'</h2><p>'+value.excerpt.rendered+'</p></div></div>');
+                //}               
+            })
+                console.log('end news');
+
+                $('#latestnews.loading').addClass('on').prev('.loadingIndicator').hide();
+
+                //click news
+                $(".cardNews").on("click", function () {
+                    var slug = $(this).attr('slug');
+                    window.location.href = "./news/?slug="+slug;
+                });
+
+            }).catch(error => {
+                console.log(error);
+            })
+        // / get json news
+
+        function verificaForm() {
+          if ($('#messageCheckprivacy').is(':checked')) {
+            sendEmail();
+          }
+          else {
+            $("#privacyModal").modal("show");
+          }
+        }
+
+        function closePop(closePop) {
+            $(closePop).parent().parent().parent().addClass("hide");
+        }
+
+        $('#modalGallery .modal-header button').click(function (e) { 
+            $('#modalGallery .modal-body iframe').attr('src','');
+        });
+
+        function modalGallery (urlGallery, titleGallery) {
+            $('#modalGallery .modal-header h1').html(titleGallery);
+            $('#modalGallery .modal-body iframe').attr('src',urlGallery);
+            $('#modalGallery').modal('show');
+        }
+
+        $('.autoplay').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+
+/*         window.onload = function() {
+            let frameElement = document.getElementById("modalGallery");
+            let doc = frameElement.contentDocument;
+            doc.body.innerHTML = doc.body.innerHTML + '<style>.flip-embedded a img {width: 310px !important;}</style>';
+        } */
+    </script> 
+</body>
+
+</html>

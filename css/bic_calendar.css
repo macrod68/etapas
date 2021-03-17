@@ -1,0 +1,67 @@
+#bicCalendar .bic_calendar.row table.header tr:first-child {
+    display: none;
+}
+#bicCalendar .bic_calendar.row table.header tr:nth-child(2) td:last-child {
+    text-align: right;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) {
+    margin: 0 10px;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td {
+    background-color: rgba(255, 255, 255);
+    color: #184781;
+    border: 6px solid #CACFD4;
+    padding: 0;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td a {
+    padding: 24px 10px 6px 10px;
+    display: block;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td.event {
+    background-color: #184781;    
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td.event a {
+    cursor: pointer;
+    color: #fff;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td.event a:hover {
+    color: #00BDD0 !important;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr td.invalid-day {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr:nth-child(1) td {
+    background-color: #184781;
+    color: #fff;
+    padding: 0;
+}
+#bicCalendar .bic_calendar.row table:nth-child(2) tr:nth-child(1) td:nth-child(6), #bicCalendar .bic_calendar.row table:nth-child(2) tr:nth-child(1) td:nth-child(7) {
+    background: #00BDD0;
+}
+.button-month-previous,.button-month-next {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 0 3px;
+}
+.button-month-previous::before {
+    content: "\f100";
+}
+.button-month-next::before {
+
+    content: "\f101";
+}
+#bicCalendar .bic_calendar > table {
+    margin-bottom: 0;
+}
+#bicCalendar .bic_calendar td {
+    border: none;
+}
+#bicCalendar .visualmonth, .days-month td {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-family: "Confortaa", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+}

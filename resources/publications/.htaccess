@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "ETAPAS Project - Protected Area"
+AuthUserFile /web/htdocs/www.etapasproject.eu/home/resources/publications/
+Require valid-user

@@ -1,0 +1,1 @@
+var urlApi = "https://www.etapasproject.eu/backend/wp-json/";
