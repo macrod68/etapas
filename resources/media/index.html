@@ -111,65 +111,16 @@
     <div class="containerExt firstTop">
         <div class="container">
             <div class="txtBluScuro display-1">Media</div>
+            <div class="display-2 txtCeleste mt-5">Documents</div>            
+            <div id="typepdf" class="row justify-content-between">
             
-            <div class="row justify-content-between minHeight mt-5">
-
-                
-                <div class="col-lg-6 mb-4">
-                    <div onclick="modalFull('https://onedrive.live.com/embed?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21411&authkey=AIGNJSZanFF9S3Y&em=2','ETAPAS project brochure');" class="media borderGrigio bkBianco hoverEffect cursor-pointer">
-                        <div class="fotoCard"><img src="https://db3pap007files.storage.live.com/y4m29UTBuKSMzBKz0sXLHSYQGCF7iquHVpxr3uH9vF4onYIh1-kItUq-x5zoSGKiV1cboeFdyisaEL2-jyFVpVL2fjVNcMDSOglCrjEWpmj-nbe7gK6t9onIdQnN7O3Wa5maWGn1OCWOpbk2w50DVGS-qCdZ0EiLiQp_xLLKr0D-DLL0ezZre1ZvTJF9SwGZIPx?width=400&height=400&cropmode=none"></div>
-                        <div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%">
-                            <h1 class="mt-3 txtBluScuro">ETAPAS project brochure</h1>
-                            <!-- <p>Lorem ipsum dolor sit adendum fecit adriat moret fecit oret mitrium.</p> -->
-                            <i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-pdf mr-2"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-4">
-                    <div onclick="modalFull('https://onedrive.live.com/embed?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21410&authkey=AFsqfgNZLdFVUvM&em=2','ETAPAS Online Workshop Agenda 30.04.2021');" class="media borderGrigio bkBianco hoverEffect cursor-pointer">
-                        <div class="fotoCard"><img src="https://db3pap007files.storage.live.com/y4mZM2hynUG3_qh80VduVrc6uSQIO8GugHEkPjD2gnPhw3aMvmzC8_lNGU_CDK-Tm_erndx3eSztxQvr1tBf-VuF5Hly-VVrkWs7-T0y-iSAcEZlmf6e5HImFwl0petrm8TnseEAEAgkTODpzbQOoXmPQf6_0Lbm6xAK6sQZp3tbhD-EWXXzK9dS_kwxYW7NHwD?width=400&height=400&cropmode=none"></div>
-                        <div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%">
-                            <h1 class="mt-3 txtBluScuro">ETAPAS Online Workshop Agenda 30.04.2021</h1>
-                            <p>Disruptive technologies in the Public Sector: how to manage ethical risks and social impacts?</p>
-                            <i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-word mr-2"></i>
-                        </div>
-                    </div>
-                </div>                
-                
+                  
             </div>
-            
-                <!-- <div class="row articolo">
-                    <div class="col">
-                        <div class="display-4 mb-2">Embed di un video Onedrive</div>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        <div class="container">
-
-                            <div class="row borderGrigio rounded p-3">
-                                
-                                <div class="col-lg-6 col-md-12 p-3">
-                                    <div>
-                                        <video controls width="100%" height="100%">
-                                            <source src="https://onedrive.live.com/download?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21144&authkey=AKZgT5x4VH_tyZU" type='video/mp4'/>
-                                        </video>
-                                        <div class="fontPiccolo txtGrigio">1) Test video incorporato</div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-12 p-3">
-                                    <div>
-                                        <video controls width="100%" height="100%">
-                                            <source src="https://onedrive.live.com/download?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21144&authkey=AKZgT5x4VH_tyZU" type='video/mp4'/>                                        
-                                        </video>
-                                        <div class="fontPiccolo txtGrigio">2) Test video incorporato</div>
-                                    </div>                                
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
+            <hr>
+            <div class="display-2 txtCeleste mt-5">Video</div>
+            <div id="typevideo" class="row justify-content-between">
+                  
+            </div>
 
         </div>
     </div>
@@ -228,6 +179,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
     <script>
         function modalFull (urlGallery, titleGallery) {
@@ -237,7 +189,39 @@
             $('#modalFull .modal-body iframe').attr('src',urlGallery);
             $('#modalFull').modal('show');
         }
+
+        // get json news
+        jQuery.ajax({
+                url: urlApi+"acf/v3/posts?categories=6",
+                method: "GET"
+            }).then(function (response) {
+
+            $.each(response, function (index, value) {                
+                if(value.acf.type[0] == "pdf"){
+                    $('#typepdf').append('<div class="col-lg-6 mb-4"><div onclick="modalFull(\''+value.acf.url+'\',\''+value.acf.titolo+'\');" class="media borderGrigio bkBianco hoverEffect cursor-pointer"><div class="fotoCard" style="width: 150px"><img style="width: 100%; height: auto" src="'+value.acf.cover+'"></div><div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%"><h1 class="mt-3 txtBluScuro">'+value.acf.titolo+'</h1><p>'+value.acf.description+'</p><i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-pdf mr-2"></i></div></div></div>');
+                }
+                else {
+                    var urlvideo = value.acf.url;
+                    var replaceurlvideo = urlvideo.replace("embed","download");
+                    $('#typevideo').append('<div class="col-lg-6 mb-4"><div class="borderGrigio bkBianco"><video controls="" width="100%" height="100%"><source src="'+replaceurlvideo+'" type="video/mp4"></video><div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%"><h1 class="mt-3 txtBluScuro">'+value.acf.titolo+'</h1><p>'+value.acf.description+'</p><i style="top: -14px;right: 0;" class="position-absolute txtGrigio fas fa-video mr-2"></i></div></div></div>');
+                }
+            })
+                console.log('end media');
+
+                $('#media.loading').addClass('on').prev('.loadingIndicator').hide();
+
+                //click news
+                $(".cardNews").on("click", function () {
+                    var slug = $(this).attr('slug');
+                    window.location.href = "./news/?slug="+slug;
+                });
+
+            }).catch(error => {
+                console.log(error);
+            })
+        // / get json news
+
+    
     </script>
 </body>
-
 </html>

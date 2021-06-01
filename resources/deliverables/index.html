@@ -14,7 +14,14 @@
     <link href="/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Lato:wght@400;900&display=swap" rel="stylesheet">
-    
+    <style>
+        #modalFull .loadingIndicator {
+            padding: 30px;
+            position: absolute;
+            left: 400px;
+            top: 360px;
+        }
+    </style>
 
 </head>
 
@@ -104,7 +111,30 @@
         <div class="container">
             <div class="txtBluScuro display-1">Public Deliverables</div>
 
-            <div class="minHeight"><p>Contents coming soon</p></div>           
+            <div class="row justify-content-between minHeight mt-5">
+                
+                <div class="col-lg-6 mb-4">
+                    <div onclick="modalFull('https://onedrive.live.com/embed?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21516&authkey=AGeyjWZv80hjIxk&em=2','Code of Conduct for DTs');" class="media borderGrigio bkBianco hoverEffect cursor-pointer">
+                        <div class="fotoCard"><img src="https://db3pap007files.storage.live.com/y4moYCG8pOK-q78hatpDn_9R2gv77Saka24_Vfe5krlPniY8j_9YtOCgK5R8zg5wFidBFA6FsqPKq_3f8JL1uPfMjT_CBFIEqsAfhWeMUpNRUvlULRBgUmnNFnHpuM7_QB0KVIfKCfHetbA8_yd9pjOPMFES0y-MZ9e93wVAWUQhVjX-CEZFhf4hJMpGJ6XTDR_?width=400&height=400&cropmode=none"></div>
+                        <div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%">
+                            <h1 class="mt-3 txtBluScuro">Code of Conduct for DTs</h1>
+                            <!-- <p>Lorem ipsum dolor sit adendum fecit adriat moret fecit oret mitrium.</p> -->
+                            <i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-pdf mr-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6 mb-4">
+                    <div onclick="modalFull('https://onedrive.live.com/embed?cid=08362975DAACA6A1&resid=8362975DAACA6A1%21410&authkey=AFsqfgNZLdFVUvM&em=2','ETAPAS Online Workshop Agenda 30.04.2021');" class="media borderGrigio bkBianco hoverEffect cursor-pointer">
+                        <div class="fotoCard"><img src="https://db3pap007files.storage.live.com/y4mZM2hynUG3_qh80VduVrc6uSQIO8GugHEkPjD2gnPhw3aMvmzC8_lNGU_CDK-Tm_erndx3eSztxQvr1tBf-VuF5Hly-VVrkWs7-T0y-iSAcEZlmf6e5HImFwl0petrm8TnseEAEAgkTODpzbQOoXmPQf6_0Lbm6xAK6sQZp3tbhD-EWXXzK9dS_kwxYW7NHwD?width=400&height=400&cropmode=none"></div>
+                        <div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%">
+                            <h1 class="mt-3 txtBluScuro">ETAPAS Online Workshop Agenda 30.04.2021</h1>
+                            <p>Disruptive technologies in the Public Sector: how to manage ethical risks and social impacts?</p>
+                            <i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-pdf mr-2"></i>
+                        </div>
+                    </div>
+                </div> -->
+                
+            </div>          
             
         </div>
     </div>
@@ -141,10 +171,38 @@
         </div>
         <!-- END Bootstrap-Cookie-Alert -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/custom.js"></script>
+<!-- Modal Full -->
+<div class="modal fade" id="modalFull" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title display-2 txtBlu my-0 mx-4" id="successModalLabel"></h1>
+        <button type="button" class="close txtBluScuro" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="loading"></div> 
+        <div class="modal-body">
+                                       
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/custom.js"></script>
+        <script>
+            function modalFull (urlGallery, titleGallery) {
+                $('#modalFull .modal-body').empty();
+                $('#modalFull .modal-body').append('<iframe width="100%" height="700" frameborder="0"></iframe>');
+                $('#modalFull .modal-header h1').html(titleGallery);
+                $('#modalFull .modal-body iframe').attr('src',urlGallery);
+                $('#modalFull').modal('show');
+            }
+        </script>
 </body>
 
 </html>
