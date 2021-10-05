@@ -14,6 +14,14 @@
     <link href="/css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        #modalFull .loadingIndicator {
+            padding: 30px;
+            position: absolute;
+            left: 400px;
+            top: 360px;
+        }
+    </style>
     
 
 </head>
@@ -104,8 +112,12 @@
         <div class="container">
             <div class="txtBluScuro display-1">Other Resources</div>
             
-            <div class="minHeight"><p>Contents coming soon</p></div>            
-            
+            <div class="display-2 txtCeleste mt-5">Documents</div>            
+            <div id="typepdf" class="row justify-content-between loading"></div>
+            <hr>
+            <div class="display-2 txtCeleste mt-5">Video</div>
+            <div id="typevideo" class="row justify-content-between loading"></div>
+
         </div>
     </div>
 
@@ -141,10 +153,66 @@
         </div>
         <!-- END Bootstrap-Cookie-Alert -->
 
+    <!-- Modal Full -->
+    <div class="modal fade" id="modalFull" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title display-2 txtBlu my-0 mx-4" id="successModalLabel"></h1>
+            <button type="button" class="close txtBluScuro" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="loading"></div> 
+            <div class="modal-body">
+                                           
+            </div>
+            
+        </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
-</body>
+    <script>
+        function modalFull (urlGallery, titleGallery) {
+            $('#modalFull .modal-body').empty();
+            $('#modalFull .modal-body').append('<iframe width="100%" height="700" frameborder="0"></iframe>');
+            $('#modalFull .modal-header h1').html(titleGallery);
+            $('#modalFull .modal-body iframe').attr('src',urlGallery);
+            $('#modalFull').modal('show');
+        }
 
+        // get json resources
+        jQuery.ajax({
+                url: urlApi+"acf/v3/posts?categories=11",
+                method: "GET"
+            }).then(function (response) {
+
+            $.each(response, function (index, value) {                
+                if(value.acf.type[0] == "pdf"){
+                    $('#typepdf').append('<div class="col-lg-6 mb-4"><div onclick="modalFull(\''+value.acf.url+'\',\''+value.acf.titolo+'\');" class="media borderGrigio bkBianco hoverEffect cursor-pointer"><div class="fotoCard" style="width: 150px"><img style="width: 100%; height: auto" src="'+value.acf.cover+'"></div><div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%"><h1 class="mt-3 txtBluScuro">'+value.acf.titolo+'</h1><p>'+value.acf.description+'</p><i style="top: 7px; right: 0" class="position-absolute txtGrigio fas fa-file-pdf mr-2"></i></div></div></div>');
+                }
+                else {
+                    var urlvideo = value.acf.url;
+                    var replaceurlvideo = urlvideo.replace("embed","download");
+                    $('#typevideo').append('<div class="col-lg-6 mb-4"><div class="borderGrigio bkBianco"><video controls="" width="100%" height="100%"><source src="'+replaceurlvideo+'" type="video/mp4"></video><div class="fontNormale pl-4 pr-5 position-relative" style="width: 100%"><h1 class="mt-3 txtBluScuro">'+value.acf.titolo+'</h1><p>'+value.acf.description+'</p><i style="top: -14px;right: 0;" class="position-absolute txtGrigio fas fa-video mr-2"></i></div></div></div>');
+                }
+            })
+                console.log('end media');
+
+                $('#typepdf.loading, #typevideo.loading').addClass('on').prev('.loadingIndicator').hide();
+
+
+            }).catch(error => {
+                console.log(error);
+            })
+        // / get json resources
+
+    
+    </script>
+</body>
 </html>

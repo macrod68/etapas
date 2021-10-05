@@ -111,16 +111,12 @@
     <div class="containerExt firstTop">
         <div class="container">
             <div class="txtBluScuro display-1">Media</div>
-            <div class="display-2 txtCeleste mt-5">Documents</div>            
-            <div id="typepdf" class="row justify-content-between">
             
-                  
-            </div>
+            <div class="display-2 txtCeleste mt-5">Documents</div>            
+            <div id="typepdf" class="row justify-content-between loading"></div>
             <hr>
             <div class="display-2 txtCeleste mt-5">Video</div>
-            <div id="typevideo" class="row justify-content-between">
-                  
-            </div>
+            <div id="typevideo" class="row justify-content-between loading"></div>
 
         </div>
     </div>
@@ -190,7 +186,7 @@
             $('#modalFull').modal('show');
         }
 
-        // get json news
+        // get json resources
         jQuery.ajax({
                 url: urlApi+"acf/v3/posts?categories=6",
                 method: "GET"
@@ -208,18 +204,13 @@
             })
                 console.log('end media');
 
-                $('#media.loading').addClass('on').prev('.loadingIndicator').hide();
+                $('#typepdf.loading, #typevideo.loading').addClass('on').prev('.loadingIndicator').hide();
 
-                //click news
-                $(".cardNews").on("click", function () {
-                    var slug = $(this).attr('slug');
-                    window.location.href = "./news/?slug="+slug;
-                });
 
             }).catch(error => {
                 console.log(error);
             })
-        // / get json news
+        // / get json resources
 
     
     </script>
