@@ -38,6 +38,34 @@ a:hover {
   cursor: pointer;
 }
 
+/* START style Gutemberg */
+.wp-block-columns {
+  display: flex;
+  margin-bottom: 28px;
+}
+.wp-block-column {
+  flex: 1;
+}
+@media screen and (min-width: 782px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+    margin-left: var(--wp--style--block-gap,2em);
+  }
+}
+
+
+
+@media screen and (max-width: 764px) {
+  .wp-block-columns {
+    display: block;
+    margin: 20px 0;
+  }
+}
+/* END style Gutemberg */
+
 /* START style scroolbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -158,6 +186,11 @@ h2 {
   font-weight: 900;
   margin-bottom: 0.4rem;
   line-height: 1.1rem;
+}
+.wp-block-column h2 {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  color: #178ED5;
 }
 h3 {
   font-size: 0.9rem;
@@ -612,6 +645,12 @@ a[data-toggle="collapse"][aria-expanded="true"] i::before{
 .fotoCard img {
   height: 100%;
 }
+figcaption {
+  font-size: 0.8rem;
+  color:rgb(140, 140, 140);
+  margin-top: 5px;
+  text-align: center;
+}
 #partners .carousel-item .row {
   min-height: 100px;
 }
@@ -741,6 +780,10 @@ a[data-toggle="collapse"][aria-expanded="true"] i::before{
   background-position-x: center !important;
   background-size: cover !important;
 }
+.wp-block-image.size-large > img {
+  width: 100%;
+  height: auto;
+}
 .parallax1 .foto{
   background: #F2FAFA url(../images/server.jpg) no-repeat;
 }
@@ -802,6 +845,9 @@ _:-ms-fullscreen, :root .texture1 .foto {
 }
 .hoverEffect:hover img {
   transform: scale(1.2);
+}
+#postContent {
+  margin-top: 20px;
 }
 .articolo {padding: 25px 0;}
 .articolo p {text-align: justify;margin-top: 0.8rem;}

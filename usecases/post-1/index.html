@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="paginaInterna">
+<body class="paginaInterna loadJson">
     <!-- Preloader -->
     <div class="spinner-wrapper">
         <div class="spinner">
@@ -79,10 +79,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item py-2" href="/resources/media">Media</a>
-                                    <a class="dropdown-item py-2" href="/resources/publications">Publications</a>
+                                    <a class="dropdown-item py-2" href="/news">News</a><a class="dropdown-item py-2" href="/resources/publications">Publications</a><a class="dropdown-item py-2" href="/resources/media">Media</a>
+                                    <!--<a class="dropdown-item py-2" href="/resources/publications">Publications</a>-->
                                     <a class="dropdown-item py-2" href="/resources/deliverables">Public Deliverables</a>
-                                    <a class="dropdown-item py-2" href="/resources/other">Other Resources</a><!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
+                                    <!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -102,20 +102,8 @@
     
     <div class="containerExt firstTop">
         <div class="container">
-            <div class="txtBluScuro display-1">Use case 1: Ethically Responsible Big Open Data (MEF)</div>
-            <div class="articolo">
-                <p><em>The use case will identify possible ethical issues/risks and impacts and propose mitigation actions and recommendations in relation to the big data analysis and publication procedure of anonymized open datasets in line with the legal framework, including the GDPR.</em></p>
-                <p>Among its activities, the Directorate of Information Systems and Innovation (DSII) of MEF provides HR shared services to around 100 Italian central and local public administrations through the NoiPA digital platform, used by 2.2 mln civil servants.</p>
-                <p>The DSII publishes on the NoiPA platform [NoiPA] a series of open datasets that are created through additional elaboration and analysis of data stored in the Enterprise Information Management Platform that collects, enhances, and analyses data from NoiPA. The published data covers:</p>
-                <ul>
-                <li>Administered personnel and Administrations (methods of salaries crediting, bodies organizational structures),</li>
-                <li>Working relationship (personnel classification, contracts, reasons for hiring of work relationships, etc),</li>
-                <li>Economic treatment (deduction detail per dependent family member, tax deductions, family allowances, etc).</li>
-                </ul>
-                <p>These datasets are published in an anonymized and aggregated so that no personal information is disclosed, in compliance with GDPR. However, the sensitivity of the data exposed on the platform requires high standards of privacy protection. Recent technology developments could enable, notably through the combination of information from different datasets, the (re)identification of personal information even in anonymized and aggregated datasets.&nbsp;</p>
-                <p><strong>In addition</strong>, every dataset can hide biased or discriminatory characteristics arising from, for instance, erroneous sampling, variables capturing sensitive background characteristics and the use of proxies. Making this information available as part of open data datasets could perpetrate biases and unfair behaviours into DTAs developed making use of those data.&nbsp;</p>
-                <p>Given the sensitivity of the open data domains, the DSII will develop this use case in order to explore further possible ethical implications deriving indirectly from the publication of the datasets, and to take action to improve the procedure for publishing the data.</p>
-            </div>
+            <div id="postTitle" class="txtBluScuro display-1"></div>
+            <div class="articolo"></div>
         </div>
     </div>
 
@@ -154,7 +142,28 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
+
+    <script>
+
+            // get json new
+            jQuery.ajax({
+                    url: urlApi+"wp/v2/pages/459",
+                    method: "GET"
+                }).then(function (response) {
+                    $('#postTitle').html(response.title.rendered);
+                    $('.articolo').html(response.content.rendered);
+                    $('.spinner-wrapper').fadeOut(500);
+                }).catch(error => {
+                    console.log(error);
+                    $('.containerExt .container').hide();
+                    $('#notfound').removeClass('hide');
+                    $('.spinner-wrapper').fadeOut(500);
+                })
+            // / get json new
+
+    </script>
 </body>
 
 </html>

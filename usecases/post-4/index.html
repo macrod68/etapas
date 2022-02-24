@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="paginaInterna">
+<body class="paginaInterna loadJson">
     <!-- Preloader -->
     <div class="spinner-wrapper">
         <div class="spinner">
@@ -79,10 +79,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item py-2" href="/resources/media">Media</a>
-                                    <a class="dropdown-item py-2" href="/resources/publications">Publications</a>
+                                    <a class="dropdown-item py-2" href="/news">News</a><a class="dropdown-item py-2" href="/resources/publications">Publications</a><a class="dropdown-item py-2" href="/resources/media">Media</a>
+                                    <!--<a class="dropdown-item py-2" href="/resources/publications">Publications</a>-->
                                     <a class="dropdown-item py-2" href="/resources/deliverables">Public Deliverables</a>
-                                    <a class="dropdown-item py-2" href="/resources/other">Other Resources</a><!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
+                                    <!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -102,13 +102,8 @@
     
     <div class="containerExt firstTop">
         <div class="container">
-            <div class="txtBluScuro display-1"> 4: Public Organizations Multi-factor Misinformation Handling (CERTH-MUKA)</div>
-            <div class="articolo">
-                <p><em>The deployment of AI for fake news detection and prioritization of emerging issues in the municipality of Katerini (Greece) will be assessed by the ETAPAS framework to identify all relevant ethical and social risks and propose mitigation actions, eliminating any relevant risks and unforeseen consequences.</em></p>
-                <p>While most of the municipalities are now equipped with online communication infrastructures for the citizens, it is clear that massive amounts of incoming information, sensing the public pulse, concerns and emerging issues can nowadays only be collected and processed in automatic ways using big data and AI technologies.&nbsp;</p>
-                <p>Public Administrations can harness AI for the detection of false news in order to protect themselves and their citizens against misinformation. At the same time, they need to ensure transparent use of AI technologies since lack of proactive declaration of AI systems could compromise users&rsquo; trust and the adoption of AI in the public sector. AI-powered automated detection and/or removal of false or dubious content coming from news feeds and social media is prone to bias risks arising from multiple sources (e.g. incomplete or unrepresentative training data) that might lead to incorrect flagging of a truthful statement as false, embedding and amplifying discrimination and unfairness in public sector practice. Lack of meaningful explanations for decisions behind AI-powered systems&rsquo; decisions can undermine the organisational accountability of responsibility for key decisions made in the public sector.&nbsp;</p>
-                <p>This use case will provide municipalities with a platform with the following functionalities: news and social media merger summarization; topics clustering, classification and prioritization; graph-based fake news detector; public opinion (e.g. sentiment) analyser; visual analytics. The platform will be applied to a specific scenario aiming to improve migration reporting, restrict criminality and violence in the municipality of Katerini (GR). News feeds and social media will be analysed while location specific information will be processed to evaluate the living conditions of immigrants and sense the local&rsquo;s acceptance and form privacy preserving groups of opinions and views.</p>
-            </div>
+            <div id="postTitle" class="txtBluScuro display-1"></div>
+            <div class="articolo"></div>
         </div>
     </div>
 
@@ -147,7 +142,28 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
+
+    <script>
+
+            // get json new
+            jQuery.ajax({
+                    url: urlApi+"wp/v2/pages/486",
+                    method: "GET"
+                }).then(function (response) {
+                    $('#postTitle').html(response.title.rendered);
+                    $('.articolo').html(response.content.rendered);
+                    $('.spinner-wrapper').fadeOut(500);
+                }).catch(error => {
+                    console.log(error);
+                    $('.containerExt .container').hide();
+                    $('#notfound').removeClass('hide');
+                    $('.spinner-wrapper').fadeOut(500);
+                })
+            // / get json new
+
+    </script>
 </body>
 
 </html>

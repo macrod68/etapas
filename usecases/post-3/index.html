@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="paginaInterna">
+<body class="paginaInterna loadJson">
     <!-- Preloader -->
     <div class="spinner-wrapper">
         <div class="spinner">
@@ -79,10 +79,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle pl-md-4 px-0 py-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item py-2" href="/resources/media">Media</a>
-                                    <a class="dropdown-item py-2" href="/resources/publications">Publications</a>
+                                    <a class="dropdown-item py-2" href="/news">News</a><a class="dropdown-item py-2" href="/resources/publications">Publications</a><a class="dropdown-item py-2" href="/resources/media">Media</a>
+                                    <!--<a class="dropdown-item py-2" href="/resources/publications">Publications</a>-->
                                     <a class="dropdown-item py-2" href="/resources/deliverables">Public Deliverables</a>
-                                    <a class="dropdown-item py-2" href="/resources/other">Other Resources</a><!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
+                                    <!--<a class="dropdown-item py-2" href="https://www.etapasproject.eu/backend/wp-login.php">Partners Area</a>-->
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -102,12 +102,8 @@
     
     <div class="containerExt firstTop">
         <div class="container">
-            <div class="txtBluScuro display-1">Use case 3: Municipality chatbot - Kari (SINTEF-Prokom)</div>
-            <div class="articolo">
-                <p><em>The use case will consider the possible ethical risks and impacts of the chatbot Kari,</em><em>AI-based virtual agent developed for local government bodies in Norway, including among others the risks deriving from its ability to discriminate several thousand intents from users' free text input.</em></p>
-                <p>The chatbot Kari is an AI-based virtual agent developed for local government bodies &ndash; the local municipalities &ndash; to answer citizen's questions on the municipality services. It is currently available to the citizens of 80 Norwegian local municipalities &ndash; covering about 30% of the Norwegian population, and is in the process of being implemented in other European countries, including Sweden, Finland and Denmark. The chatbots knowledge-base contains over 6000 intents (answers to municipality questions), making it one of the largest in the world.&nbsp;</p>
-                <p>The chatbot Kari uses natural language to interact with users in a manner that resembles human-human dialogue. This creates situations where the user may potentially reveal highly sensitive personal data, requiring the implementation of secure data management and anonymization procedures. Further, Kari regularly receives questions about personal problems and potential self-harm, such as loneliness, depression and anxiety. This is a new set of questions that require new quality assurance services and policies to handle the information correctly and ethically. While Kari may ultimately represent an opportunity for the municipality of lowering the threshold to accessing social and health services and identify underlying or untreated needs in the population, it may also create social and ethical risks if implemented without sufficient sensitivity to these issues. This case study will thus leverage the ETAPAS framework to assess &ndash; among the others - the possible risk of the chatbot to discriminate several thousand intents (ie answers to municipality questions) from users' free text input.</p>
-            </div>
+            <div id="postTitle" class="txtBluScuro display-1"></div>
+            <div class="articolo"></div>
         </div>
     </div>
 
@@ -146,7 +142,28 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
+
+    <script>
+
+            // get json new
+            jQuery.ajax({
+                    url: urlApi+"wp/v2/pages/484",
+                    method: "GET"
+                }).then(function (response) {
+                    $('#postTitle').html(response.title.rendered);
+                    $('.articolo').html(response.content.rendered);
+                    $('.spinner-wrapper').fadeOut(500);
+                }).catch(error => {
+                    console.log(error);
+                    $('.containerExt .container').hide();
+                    $('#notfound').removeClass('hide');
+                    $('.spinner-wrapper').fadeOut(500);
+                })
+            // / get json new
+
+    </script>
 </body>
 
 </html>
