@@ -102,18 +102,8 @@
     
     <div class="containerExt firstTop">
         <div class="container">
-            <div class="txtBluScuro display-1">Overview</div>
-            <div class="articolo">
-                <p>What&rsquo;s the ethical, social and legal impact of the use of Artificial Intelligence, Robotics or Big data in the Public Sector, and how to deal with it? How can we correctly evaluate and govern the ethical implications of DTs adoption by Public Administrations and Public Service providers, taking into account the impact that these technologies can have on citizens&rsquo; lives? How can we securely manage DTs and the data they process?&nbsp;</p>
-                <p>This is the problem that the <em>Consortium Partners</em>want to address in the ETAPAS project and will be achieved by introducing three main tools:</p>
-                <ul>
-                <li>a Responsible Disruptive Technology Framework (RDT Framework) including a Code of Conduct (CoC) setting out ethical principles, an overview of ethical risks and social impacts of DTs, RDT indicators to practically measure those risks and impacts, and a European legal framework;</li>
-                <li>a Governance model; and</li>
-                <li>a prototypical software platform.</li>
-                </ul>
-                <p>Our approach aims at making these tools as practical as possible to support PAs with a responsible adoption of DTs through a careful assessment of the trustworthiness of their development and use. This includes the analysis of a large variety of multidisciplinary aspects, spanning over technical - e.g. security and accountability of employed algorithms - ethical and legal implications - e.g. value-aligned actions, discrimination of groups, and data privacy protection &ndash; social and governance ones - e.g., transparent and interpretable decision-making.&nbsp;</p>
-                <p>To this end, these tools will be co-designed with public bodies and the involvement of Digital Innovation Hubs (DIHs) and universities. Moreover, the framework will be tested and validated on four <em>Use Cases</em>, where public organisations will carry out the pilots covering different set of PA services and outreach levels.</p>
-            </div>
+            <div id="postTitle" class="txtBluScuro display-1"></div>
+            <div class="articolo"></div>
         </div>
     </div>
 
@@ -152,7 +142,28 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/urlApi.js"></script>
     <script src="/js/custom.js"></script>
+
+    <script>
+
+            // get json new
+            jQuery.ajax({
+                    url: urlApi+"wp/v2/pages/5",
+                    method: "GET"
+                }).then(function (response) {
+                    $('#postTitle').html(response.title.rendered);
+                    $('.articolo').html(response.content.rendered);
+                    $('.spinner-wrapper').fadeOut(500);
+                }).catch(error => {
+                    console.log(error);
+                    $('.containerExt .container').hide();
+                    $('#notfound').removeClass('hide');
+                    $('.spinner-wrapper').fadeOut(500);
+                })
+            // / get json new
+
+    </script>
 </body>
 
 </html>
